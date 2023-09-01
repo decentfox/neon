@@ -97,7 +97,7 @@ impl S3Bucket {
         if let Some(custom_endpoint) = aws_config.endpoint.clone() {
             config_builder = config_builder
                 .endpoint_url(custom_endpoint)
-                .force_path_style(true);
+                .force_path_style(false);
         }
         let client = Client::from_conf(config_builder.build());
 
